@@ -1,13 +1,20 @@
 const ItemList = (props) => {
+  const items = props.items.map(item => (
+  <Item
+    key={item.id}
+    id={item.id}
+    name={item.name}
+    active={item.active}
+    changeStatus={props.changeStatus}
+    />
+    ))
   return (
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-    </ul>
+    <div className="list">
+      <h3>Your order</h3>
+      <ul>
+        {items}
+      </ul>
+    </div>
   )
 
 
